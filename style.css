@@ -94,9 +94,23 @@ body {
   border: 1px solid gray;
   border-radius: 6px;
   padding: 10px;
+  position: relative;
 }
 .note h4,
 .note p,
 .btn {
   padding-bottom: 10px;
+}
+.xclose {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.xclose:hover {
+  color: rgba(255, 255, 255, 0.688);
 }
