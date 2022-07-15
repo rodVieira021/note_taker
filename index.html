@@ -24,7 +24,7 @@
         <h2>Note Taker</h2>
         <h3>Add A New Note</h3>
         <form class="form">
-          <label for=""></label>
+          <input type="date" id="date" />
           <textarea
             name=""
             id="input"
@@ -32,23 +32,25 @@
             rows="5"
             placeholder=" Write your note here.."
           ></textarea>
+          <div class="msg"></div>
           <button type="submit" class="btn-submit">Add Note</button>
         </form>
       </div>
       <div class="note">
         <div>
-          <h4>Note 1</h4>
+          <h4>2022/07/15</h4>
           <p>note content</p>
           <button class="btn-details">View Details</button>
           <i class="fa-solid fa-circle-xmark xclose"></i>
+          <button class="xedit">Edit</button>
         </div>
 
-        <div>
+        <!-- <div>
           <h4>Note 2</h4>
           <p>note content</p>
           <button class="btn-details">View Details</button>
           <i class="fa-solid fa-circle-xmark xclose"></i>
-        </div>
+        </div> -->
       </div>
     </div>
 

@@ -115,3 +115,26 @@ body {
 .xclose:hover {
   color: rgba(255, 255, 255, 0.688);
 }
+
+.xedit {
+  position: absolute;
+  left: 115px;
+  bottom: 10px;
+  font-size: 13px;
+  color: #fff;
+  border: none;
+  width: 80px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #007aff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.xedit:hover {
+  background-color: #007bffbe;
+}
+
+.msg {
+  color: red;
+}
