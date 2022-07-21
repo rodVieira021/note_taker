@@ -53,6 +53,10 @@ body {
   width: 780px;
 }
 
+#input {
+  padding: 5px;
+}
+
 .btn-submit {
   color: #fff;
   border: none;
@@ -107,6 +111,7 @@ body {
 }
 
 #title {
+  padding: 5px;
   width: 120.33px;
   height: 25px;
 }

@@ -1,5 +1,3 @@
-// window.onload = loadTasks;
-
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
 const form = document.querySelector(".form");
@@ -59,27 +57,22 @@ const resetForm = () => {
   date.value = "";
 };
 
-// function loadTasks() {
-//   if (localStorage.getItem("notes") === null) return;
-
-//   let note = Array.from(JSON.parse(localStorage.getItem("notes")));
-
-//   note.forEach((nn) => {
-//     notes.innerHTML += `
-//         <div>
-//         <h3>${nn.title}</h3>
-//         <h4>Date: ${nn.date}</h4>
-//         <p>${nn.text}</p>
-//         <button class="btn-details">View Details</button>
-//         <i onClick="deleteNote(this)" class="fa-solid fa-circle-xmark xclose"></i>
-//         <button class="xedit">Edit</button>
-//         </div>
-//         `;
-//   });
-// }
-
 const deleteNote = (e) => {
+  let data = JSON.parse(localStorage.getItem("notes"));
+  data.forEach((note) => {
+    if (note.note === e.parentElement.value) {
+      data.splice(data.indexOf(note), 1);
+    }
+  });
+  localStorage.setItem("notes", JSON.stringify(data));
   e.parentElement.remove();
 };
 
-// to fix,  it is deleting the previous saved date in the local storage instead of save all new notes
+// IIFE (Immediately invoked function expression)
+
+(() => {
+  data = JSON.parse(localStorage.getItem("notes")) || [];
+  data.forEach((element) => {
+    createNote();
+  });
+})();
