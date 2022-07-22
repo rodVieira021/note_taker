@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .app {
@@ -63,13 +64,13 @@ body {
   width: 100px;
   height: 40px;
   border-radius: 6px;
-  background-color: #1c7c38;
+  background-color: rgb(22, 145, 121);
   align-self: center;
   cursor: pointer;
   transition: 0.3s;
 }
 .btn-submit:hover {
-  background-color: #1c7c39bf;
+  background-color: rgba(22, 145, 120, 0.719);
 }
 
 .btn-details {
@@ -112,8 +113,13 @@ body {
 
 #title {
   padding: 5px;
-  width: 120.33px;
-  height: 25px;
+  width: 130px;
+  height: 30px;
+}
+
+#date {
+  width: 130px;
+  height: 30px;
 }
 
 .xclose {
@@ -151,4 +157,39 @@ body {
 
 .msg {
   color: red;
+}
+
+/* MODAL */
+
+.modal {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 75%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.xclose-modal {
+  color: #000;
+  font-size: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.xclose-modal:hover {
+  color: rgba(0, 0, 0, 0.704);
+}
+
+
+.hidden {
+    display: none;
 }
