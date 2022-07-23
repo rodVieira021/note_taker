@@ -1,7 +1,7 @@
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
 const btnCloseMd = document.querySelector(".xclose-modal");
-const btnDetails = document.querySelectorAll(".btn-details");
+const btnDetails = document.querySelector(".btn-details");
 const mdContainer = document.querySelector(".modal-container");
 const form = document.querySelector(".form");
 const inputTitle = document.getElementById("title");
@@ -62,18 +62,28 @@ const resetForm = () => {
 };
 
 const deleteNote = (e) => {
-  let data = JSON.parse(localStorage.getItem("notes"));
+  let data = Array.from(JSON.parse(localStorage.getItem("notes")));
   data.forEach((note) => {
-    if (note.note === e.parentElement.value) {
-      data.splice(data.indexOf(note), 1);
+    if (note.note === e.value) {
+      data.splice(note, 1);
     }
   });
-  localStorage.setItem("notes", JSON.stringify(data));
   e.parentElement.remove();
+  localStorage.setItem("notes", JSON.stringify(data));
 };
 
-// IIFE (Immediately invoked function expression) load tasks from local storage
+// const deleteNote = (e) => {
+//   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
+//   e.parentElement.remove();
+//   data.forEach((note) => {
+//     if (note.note === e.value) {
+//       data.splice(data.indexOf(note), 1);
+//     }
+//   });
+//   localStorage.setItem("notes", JSON.stringify(data));
+// };
 
+// IIFE (Immediately invoked function expression) load tasks from local storage
 (() => {
   data = JSON.parse(localStorage.getItem("notes")) || [];
   data.forEach((element) => {
@@ -83,17 +93,23 @@ const deleteNote = (e) => {
 
 // MODAL DETAILS
 
-notesAll.forEach((detail) => {
-  detail.addEventListener("click", function (e) {
-    e.preventDefault();
-    mdContainer.classList.remove("hidden");
-  });
-});
+// notesAll.forEach((detail) => {
+//   detail.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     mdContainer.classList.remove("hidden");
+//   });
+// });
 
-//btn add all and target
-btnCloseMd.addEventListener("click", function (e) {
-  e.preventDefault();
-  mdContainer.classList.add("hidden");
-});
+// btnDetails.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   mdContainer.classList.remove("hidden");
+// });
 
-//for each loop to see which detailBTN is being clicked and open the modal accordingly.
+// //btn add all and target
+// btnCloseMd.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   mdContainer.classList.add("hidden");
+// });
+
+//FIX THE DELETE FUNCTION, LOCALSTORAGE IS NOT UPDATING
