@@ -8,7 +8,7 @@ const inputTitle = document.getElementById("title");
 const inputText = document.getElementById("input");
 const inputDate = document.getElementById("date");
 const message = document.querySelector(".msg");
-const notesAll = document.querySelectorAll(".note");
+// const notesAll = document.querySelectorAll(".note");
 let notes = document.querySelector(".note");
 let data = [];
 
@@ -37,7 +37,7 @@ const createNote = () => {
           <h4>Date: ${element.date}</h4>
           <p>${element.text}</p>
           <button class="btn-details">View Details</button> 
-          <i onClick="deleteNote(this)" class="fa-solid fa-circle-xmark xclose"></i>
+          <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
           <button class="xedit">Edit</button>
           </div>
           `);
@@ -61,27 +61,34 @@ const resetForm = () => {
   date.value = "";
 };
 
-const deleteNote = (e) => {
-  let data = Array.from(JSON.parse(localStorage.getItem("notes")));
-  data.forEach((note) => {
-    if (note.note === e.value) {
-      data.splice(note, 1);
-    }
-  });
-  e.parentElement.remove();
-  localStorage.setItem("notes", JSON.stringify(data));
-};
-
-// const deleteNote = (e) => {
+// const deleteNote = (event) => {
+//   //MINE
 //   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
-//   e.parentElement.remove();
-//   data.forEach((note) => {
-//     if (note.note === e.value) {
-//       data.splice(data.indexOf(note), 1);
+
+//   data = data.filter(function (note) {
+//     if (note.note !== event.value) {
+//       console.log("not the same");
 //     }
 //   });
-//   localStorage.setItem("notes", JSON.stringify(data));
 // };
+
+// const deleteNote = (event) => { //Attempt 1
+//   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
+//   data = data.filter((note) => note.note !== event.value);
+//   localStorage.setItem("notes", JSON.stringify(data));
+//   event.parentElement.remove();
+// };
+
+const deleteNote = (event) => {  //Attempt 2
+  let data = Array.from(JSON.parse(localStorage.getItem("notes")));
+  data.forEach((note, i) => {
+    if (note.note === event.parentElement.children[1].value) {
+      data.splice(i, 1);
+    }
+  });
+  localStorage.setItem("notes", JSON.stringify(data));
+  event.parentElement.remove();
+};
 
 // IIFE (Immediately invoked function expression) load tasks from local storage
 (() => {
