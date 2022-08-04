@@ -30,7 +30,7 @@ const formValidation = () => {
 //func creating a note
 const createNote = () => {
   notes.innerHTML = "";
-  data.map((element) => {
+  data.map((element, index) => {
     return (notes.innerHTML += `
           <div>
           <h3>${element.title}</h3>
@@ -61,34 +61,18 @@ const resetForm = () => {
   date.value = "";
 };
 
-// const deleteNote = (event) => {
-//   //MINE
-//   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
-
-//   data = data.filter(function (note) {
-//     if (note.note !== event.value) {
-//       console.log("not the same");
-//     }
-//   });
-// };
-
-// const deleteNote = (event) => { //Attempt 1
-//   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
-//   data = data.filter((note) => note.note !== event.value);
-//   localStorage.setItem("notes", JSON.stringify(data));
-//   event.parentElement.remove();
-// };
-
-const deleteNote = (event) => {  //Attempt 2
+const deleteNote = (target) => {
   let data = Array.from(JSON.parse(localStorage.getItem("notes")));
-  data.forEach((note, i) => {
-    if (note.note === event.parentElement.children[1].value) {
-      data.splice(i, 1);
-    }
+
+  data = data.filter(function (item) {
+    let parentDiv = target.parentElement;
+    let value = parentDiv.children[0].innerHTML;
+    return item.title !== value;
   });
-  localStorage.setItem("notes", JSON.stringify(data));
-  event.parentElement.remove();
+  data = localStorage.setItem("notes", JSON.stringify(data));
+  target.parentElement.remove();
 };
+
 
 // IIFE (Immediately invoked function expression) load tasks from local storage
 (() => {
