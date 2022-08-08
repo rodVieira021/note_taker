@@ -177,23 +177,30 @@ body {
   border-radius: 6px;
 }
 
-.xclose-modal {
+.xmodal {
   color: #000;
   font-size: 25px;
   position: relative;
   cursor: pointer;
   transition: 0.3s;
+  border: none;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
 }
 
-.xclose-modal:hover {
+.xmodal:hover {
   color: rgba(0, 0, 0, 0.704);
 }
 
-
 .hidden {
-    display: none;
+  display: none;
 }
 
-textarea{
-  white-space:
+textarea {
+  white-space: ;
+}
+
+.innerTxt {
+  color: #000;
 }

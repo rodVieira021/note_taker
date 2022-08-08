@@ -1,8 +1,9 @@
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
-const btnCloseMd = document.querySelector(".xclose-modal");
+const btnCloseMd = document.querySelector(".xmodal");
 const btnDetails = document.querySelectorAll(".btn-details");
 const mdContainer = document.querySelector(".modal-container");
+const mdInner = document.querySelector(".innerTxt");
 const form = document.querySelector(".form");
 const inputTitle = document.getElementById("title");
 const inputText = document.getElementById("input");
@@ -83,18 +84,28 @@ const deleteNote = (target) => {
 
 // MODAL DETAILS
 
-notesAll.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    const targetBtn = e.target.parentElement.children[2].innerHTML;
-    console.log(targetBtn);
+notesAll.forEach((btn) => { //add another foreach inside to search for each btn clicked
+  btnDetails.addEventListener("click", function (e) {
+    openModal();
+    const targetTitle = e.target.parentElement.children[0].innerHTML;
+    const targetDate = e.target.parentElement.children[1].innerHTML;
+    const targetText = e.target.parentElement.children[2].innerHTML;
+    mdInner.innerHTML = `
+    ${targetTitle}<br>
+    ${targetDate}<br>
+    ${targetText}`;
   });
 });
 
-// btnDetails.addEventListener("click", function (e) {
-//   mdContainer.classList.remove("hidden");
-// });
+//MODAL FUNCTIONS
+const openModal = (e) => {
+  // e.preventDefault()
+  mdContainer.classList.remove("hidden");
+};
 
-// //btn add all and target
-// btnCloseMd.addEventListener("click", function (e) {
-//   mdContainer.classList.add("hidden");
-// });
+const closeModal = () => {
+  btnCloseMd.addEventListener("click", function (e) {
+    mdContainer.classList.add("hidden");
+  });
+};
+closeModal();
