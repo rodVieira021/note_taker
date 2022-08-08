@@ -1,14 +1,14 @@
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
 const btnCloseMd = document.querySelector(".xclose-modal");
-const btnDetails = document.querySelector(".btn-details");
+const btnDetails = document.querySelectorAll(".btn-details");
 const mdContainer = document.querySelector(".modal-container");
 const form = document.querySelector(".form");
 const inputTitle = document.getElementById("title");
 const inputText = document.getElementById("input");
 const inputDate = document.getElementById("date");
 const message = document.querySelector(".msg");
-// const notesAll = document.querySelectorAll(".note");
+const notesAll = document.querySelectorAll(".note");
 let notes = document.querySelector(".note");
 let data = [];
 
@@ -73,7 +73,6 @@ const deleteNote = (target) => {
   target.parentElement.remove();
 };
 
-
 // IIFE (Immediately invoked function expression) load tasks from local storage
 (() => {
   data = JSON.parse(localStorage.getItem("notes")) || [];
@@ -84,23 +83,18 @@ const deleteNote = (target) => {
 
 // MODAL DETAILS
 
-// notesAll.forEach((detail) => {
-//   detail.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     mdContainer.classList.remove("hidden");
-//   });
-// });
+notesAll.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    const targetBtn = e.target.parentElement.children[2].innerHTML;
+    console.log(targetBtn);
+  });
+});
 
 // btnDetails.addEventListener("click", function (e) {
-//   e.preventDefault();
 //   mdContainer.classList.remove("hidden");
 // });
 
 // //btn add all and target
 // btnCloseMd.addEventListener("click", function (e) {
-//   e.preventDefault();
 //   mdContainer.classList.add("hidden");
 // });
-
-//FIX THE DELETE FUNCTION, LOCALSTORAGE IS NOT UPDATING

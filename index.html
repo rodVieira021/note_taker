@@ -39,22 +39,16 @@
       </div>
       <div class="note">
         <!-- <div>
-          <h3>Title</h3>
-          <h4>Date: 2022/07/15</h4>
-          <p>note content</p>
-          <button class="btn-details">View Details</button>
-          <i class="fa-solid fa-circle-xmark xclose"></i>
+          <h3>${element.title}</h3>
+          <h4>Date: ${element.date}</h4>
+          <p>${element.text}</p>
+          <button class="btn-details">View Details</button> 
+          <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
           <button class="xedit">Edit</button>
-        </div> -->
+          </div> -->
 
-        <!-- <div>
-          <h4>Note 2</h4>
-          <p>note content</p>
-          <button class="btn-details">View Details</button>
-          <i class="fa-solid fa-circle-xmark xclose"></i>
-        </div> -->
       </div>
-      <div class="modal-container hidden">
+      <div class="modal-container hidden" id='md-container'>
         <span class="modal"
           ><i class="fa-solid fa-circle-xmark xclose-modal"></i
         ></span>
