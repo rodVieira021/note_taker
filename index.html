@@ -46,12 +46,11 @@
           <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
           <button class="xedit">Edit</button>
           </div> -->
-
       </div>
-      <div class="modal-container hidden" id='md-container'>
-        <div class="modal">
-        <span class='innerTxt'></span>
-        <button class="xmodal">&#10005;</button>
+      <div class="modal-container" id="md-container">
+        <div class="modal hidden">
+          <span class="innerTxt"></span>
+          <button id="xmodal" onclick="closeModal(this)">&#10005;</button>
         </div>
       </div>
     </div>

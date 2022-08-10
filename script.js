@@ -1,8 +1,8 @@
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
-const btnCloseMd = document.querySelector(".xmodal");
-const btnDetails = document.querySelectorAll(".btn-details");
-const mdContainer = document.querySelector(".modal-container");
+const mdContainer = document.querySelector(".modal-conatiner");
+const btnCloseMd = document.getElementById("xmodal");
+const modal = document.querySelectorAll(".modal");
 const mdInner = document.querySelector(".innerTxt");
 const form = document.querySelector(".form");
 const inputTitle = document.getElementById("title");
@@ -16,6 +16,7 @@ let data = [];
 const listener = form.addEventListener("submit", function (e) {
   e.preventDefault();
   formValidation();
+  window.location.reload();
 });
 // form validation
 const formValidation = () => {
@@ -37,7 +38,7 @@ const createNote = () => {
           <h3>${element.title}</h3>
           <h4>Date: ${element.date}</h4>
           <p>${element.text}</p>
-          <button class="btn-details">View Details</button> 
+          <button class="btn-details" onclick="openModal(this)">View Details</button> 
           <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
           <button class="xedit">Edit</button>
           </div>
@@ -84,28 +85,30 @@ const deleteNote = (target) => {
 
 // MODAL DETAILS
 
-notesAll.forEach((btn) => { //add another foreach inside to search for each btn clicked
-  btnDetails.addEventListener("click", function (e) {
-    openModal();
+//MODAL FUNCTIONS
+
+const openModal = () => {
+  modal.forEach((container) => {
+    container.classList.remove("hidden");
+  });
+};
+
+const closeModal = () => {
+  modal.forEach((container) => {
+    container.classList.add("hidden");
+  });
+};
+
+const btnDtt = document.querySelectorAll(".btn-details");
+
+btnDtt.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
     const targetTitle = e.target.parentElement.children[0].innerHTML;
     const targetDate = e.target.parentElement.children[1].innerHTML;
     const targetText = e.target.parentElement.children[2].innerHTML;
     mdInner.innerHTML = `
-    ${targetTitle}<br>
-    ${targetDate}<br>
-    ${targetText}`;
+      <h2 class="inner-title">${targetTitle}</h2>
+      <h3 class="inner-data">${targetDate}</h3>
+      <p class="inner-text">${targetText}</p>`;
   });
 });
-
-//MODAL FUNCTIONS
-const openModal = (e) => {
-  // e.preventDefault()
-  mdContainer.classList.remove("hidden");
-};
-
-const closeModal = () => {
-  btnCloseMd.addEventListener("click", function (e) {
-    mdContainer.classList.add("hidden");
-  });
-};
-closeModal();
