@@ -37,17 +37,8 @@
           <button type="submit" class="btn-submit">Add Note</button>
         </form>
       </div>
-      <div class="note">
-        <!-- <div>
-          <h3>${element.title}</h3>
-          <h4>Date: ${element.date}</h4>
-          <p>${element.text}</p>
-          <button class="btn-details">View Details</button> 
-          <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
-          <button class="xedit">Edit</button>
-          </div> -->
-      </div>
-      <div class="modal-container" id="md-container">
+      <div class="note"></div>
+      <div contenteditable="true" class="modal-container" id="md-container">
         <div class="modal hidden">
           <span class="innerTxt"></span>
           <button id="xmodal" onclick="closeModal(this)">&#10005;</button>

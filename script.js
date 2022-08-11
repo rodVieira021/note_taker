@@ -16,7 +16,6 @@ let data = [];
 const listener = form.addEventListener("submit", function (e) {
   e.preventDefault();
   formValidation();
-  window.location.reload();
 });
 // form validation
 const formValidation = () => {
@@ -26,6 +25,7 @@ const formValidation = () => {
     message.innerHTML = "";
     acceptData();
     createNote();
+    window.location.reload();
   }
 };
 
@@ -36,7 +36,7 @@ const createNote = () => {
     return (notes.innerHTML += `
           <div>
           <h3>${element.title}</h3>
-          <h4>Date: ${element.date}</h4>
+          <h4>Date:${element.date}</h4>
           <p>${element.text}</p>
           <button class="btn-details" onclick="openModal(this)">View Details</button> 
           <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
@@ -56,7 +56,7 @@ const acceptData = () => {
   });
   localStorage.setItem("notes", JSON.stringify(data));
 };
-
+//reset form
 const resetForm = () => {
   input.value = "";
   title.value = "";
@@ -83,8 +83,6 @@ const deleteNote = (target) => {
   });
 })();
 
-// MODAL DETAILS
-
 //MODAL FUNCTIONS
 
 const openModal = () => {
@@ -99,6 +97,15 @@ const closeModal = () => {
   });
 };
 
+const btnEdit = document.querySelectorAll(".xedit");
+
+btnEdit.forEach((btne) => {
+  btne.addEventListener("click", function (e) {
+    title.value = e.targetTitle;
+    input.value = "chupa";
+  });
+}); //find a way to push the info in the clicked edit BTN to the inputs so the old task is delete and the new being edit to be saved as a new task
+
 const btnDtt = document.querySelectorAll(".btn-details");
 
 btnDtt.forEach((btn) => {
@@ -112,3 +119,10 @@ btnDtt.forEach((btn) => {
       <p class="inner-text">${targetText}</p>`;
   });
 });
+//find a way to push the info in the clicked edit BTN to the inputs so the old task is delete and the new being edit to be saved as a new task
+
+//EDIT functions
+
+// const title = document.querySelector(".inner-title");
+// const date = document.querySelector(".inner-data");
+// const text = document.querySelector(".inner-text");
