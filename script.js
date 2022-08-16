@@ -32,15 +32,15 @@ const formValidation = () => {
 //func creating a note
 const createNote = () => {
   notes.innerHTML = "";
-  data.map((element, index) => {
+  data.map((element) => {
     return (notes.innerHTML += `
-          <div>
+          <div id="claus">
           <h3>${element.title}</h3>
           <h4>Date:${element.date}</h4>
           <p>${element.text}</p>
           <button class="btn-details" onclick="openModal(this)">View Details</button> 
           <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
-          <button class="xedit">Edit</button>
+          <button class="xedit" onclick="editNote(this)">Edit</button>
           </div>
           `);
   });
@@ -79,11 +79,11 @@ const deleteNote = (target) => {
 (() => {
   data = JSON.parse(localStorage.getItem("notes")) || [];
   data.forEach((element) => {
-    createNote();
+    createNote(element);
   });
 })();
 
-//MODAL FUNCTIONS
+//MODAL
 
 const openModal = () => {
   modal.forEach((container) => {
@@ -97,32 +97,38 @@ const closeModal = () => {
   });
 };
 
-const btnEdit = document.querySelectorAll(".xedit");
-
-btnEdit.forEach((btne) => {
-  btne.addEventListener("click", function (e) {
-    title.value = e.targetTitle;
-    input.value = "chupa";
-  });
-}); //find a way to push the info in the clicked edit BTN to the inputs so the old task is delete and the new being edit to be saved as a new task
-
+//Shows info in the modal
 const btnDtt = document.querySelectorAll(".btn-details");
 
 btnDtt.forEach((btn) => {
   btn.addEventListener("click", function (e) {
-    const targetTitle = e.target.parentElement.children[0].innerHTML;
-    const targetDate = e.target.parentElement.children[1].innerHTML;
-    const targetText = e.target.parentElement.children[2].innerHTML;
     mdInner.innerHTML = `
-      <h2 class="inner-title">${targetTitle}</h2>
-      <h3 class="inner-data">${targetDate}</h3>
-      <p class="inner-text">${targetText}</p>`;
+      <h2 class="inner-title">${e.target.parentElement.children[0].innerHTML}</h2>
+      <h3 class="inner-data">${e.target.parentElement.children[1].innerHTML}</h3>
+      <p class="inner-text">${e.target.parentElement.children[2].innerHTML}</p>`;
   });
 });
-//find a way to push the info in the clicked edit BTN to the inputs so the old task is delete and the new being edit to be saved as a new task
 
-//EDIT functions
+// //EDIT function
 
-// const title = document.querySelector(".inner-title");
-// const date = document.querySelector(".inner-data");
-// const text = document.querySelector(".inner-text");
+
+const editNote = (e) => {
+  btnSubmit.classList.add("hidden");
+  btnSave.classList.remove("hidden");
+
+  title.value = e.parentElement.children[0].innerHTML;
+  date.value = e.parentElement.children[1].innerHTML;
+  input.value = e.parentElement.children[2].innerHTML;
+
+  deleteNote(e);
+};
+
+const btnSave = document.querySelector(".btn-save");
+btnSave.addEventListener("click", function (b) {
+  btnSubmit.classList.remove("hidden");
+  btnSave.classList.add("hidden");
+  formValidation(b);
+});
+
+//btn save is done it is creating a new note with the new info, the problem is that the previous note
+//is not being deleted from the local stoirage or the previous values are being saved somewhere.

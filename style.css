@@ -170,6 +170,22 @@ body {
   color: red;
 }
 
+
+.btn-save {
+  color: #fff;
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: salmon;
+  align-self: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-save:hover {
+  background-color: rgba(250, 128, 114, 0.798);
+}
+
 /* MODAL */
 
 .modal {
