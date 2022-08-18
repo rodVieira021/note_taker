@@ -9,14 +9,9 @@ const inputTitle = document.getElementById("title");
 const inputText = document.getElementById("input");
 const inputDate = document.getElementById("date");
 const message = document.querySelector(".msg");
-const notesAll = document.querySelectorAll(".note");
 let notes = document.querySelector(".note");
 let data = [];
 
-const listener = form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  formValidation();
-});
 // form validation
 const formValidation = () => {
   if (input.value === "") {
@@ -25,16 +20,17 @@ const formValidation = () => {
     message.innerHTML = "";
     acceptData();
     createNote();
-    window.location.reload();
   }
 };
+
+btnSubmit.addEventListener("click", formValidation);
 
 //func creating a note
 const createNote = () => {
   notes.innerHTML = "";
   data.map((element) => {
     return (notes.innerHTML += `
-          <div id="claus">
+          <div>
           <h3>${element.title}</h3>
           <h4>Date:${element.date}</h4>
           <p>${element.text}</p>
@@ -84,7 +80,6 @@ const deleteNote = (target) => {
 })();
 
 //MODAL
-
 const openModal = () => {
   modal.forEach((container) => {
     container.classList.remove("hidden");
@@ -110,16 +105,12 @@ btnDtt.forEach((btn) => {
 });
 
 // //EDIT function
-
-
 const editNote = (e) => {
   btnSubmit.classList.add("hidden");
   btnSave.classList.remove("hidden");
-
   title.value = e.parentElement.children[0].innerHTML;
   date.value = e.parentElement.children[1].innerHTML;
   input.value = e.parentElement.children[2].innerHTML;
-
   deleteNote(e);
 };
 
@@ -129,6 +120,3 @@ btnSave.addEventListener("click", function (b) {
   btnSave.classList.add("hidden");
   formValidation(b);
 });
-
-//btn save is done it is creating a new note with the new info, the problem is that the previous note
-//is not being deleted from the local stoirage or the previous values are being saved somewhere.
