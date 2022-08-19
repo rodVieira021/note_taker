@@ -1,0 +1,58 @@
+@media (max-width: 320px) {
+  .app {
+    width: 95%;
+  }
+  .app h2 {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .app h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #1dd2af;
+    text-align: center;
+  }
+  #input {
+    width: 37%;
+  }
+  .note > div {
+    width: 38%;
+  }
+
+  .btn-submit {
+    align-self: flex-start;
+  }
+
+  .btn-save {
+    align-self: flex-start;
+  }
+
+  .btn-details {
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
+  }
+
+  .xedit {
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
+    left: 90px;
+  }
+
+  .note h3 {
+    font-size: 14px;
+  }
+  .note h4 {
+    font-size: 14px;
+  }
+  .note p {
+    font-size: 12px;
+  }
+
+  .modal {
+    width: 5vw;
+    height: 5vh;
+  }
+}

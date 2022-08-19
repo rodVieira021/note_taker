@@ -1,10 +1,8 @@
 const btnSubmit = document.querySelector(".btn-submit");
 const btnClose = document.querySelector(".xclose");
-const mdContainer = document.querySelector(".modal-conatiner");
 const btnCloseMd = document.getElementById("xmodal");
 const modal = document.querySelectorAll(".modal");
 const mdInner = document.querySelector(".innerTxt");
-const form = document.querySelector(".form");
 const inputTitle = document.getElementById("title");
 const inputText = document.getElementById("input");
 const inputDate = document.getElementById("date");
@@ -21,8 +19,8 @@ const formValidation = () => {
     acceptData();
     createNote();
   }
+  window.location.reload();
 };
-
 btnSubmit.addEventListener("click", formValidation);
 
 //func creating a note
@@ -40,7 +38,10 @@ const createNote = () => {
           </div>
           `);
   });
-  resetForm();
+  input.value = "";
+  title.value = "";
+  date.value = "";
+  localStorage.setItem("notes", JSON.stringify(data));
 };
 
 // func get data
@@ -52,26 +53,20 @@ const acceptData = () => {
   });
   localStorage.setItem("notes", JSON.stringify(data));
 };
-//reset form
-const resetForm = () => {
-  input.value = "";
-  title.value = "";
-  date.value = "";
-};
 
 const deleteNote = (target) => {
-  let data = Array.from(JSON.parse(localStorage.getItem("notes")));
+  data = Array.from(JSON.parse(localStorage.getItem("notes")));
 
   data = data.filter(function (item) {
     let parentDiv = target.parentElement;
     let value = parentDiv.children[0].innerHTML;
     return item.title !== value;
   });
-  data = localStorage.setItem("notes", JSON.stringify(data));
+  localStorage.setItem("notes", JSON.stringify(data));
   target.parentElement.remove();
 };
 
-// IIFE (Immediately invoked function expression) load tasks from local storage
+// IIFE load tasks from local storage
 (() => {
   data = JSON.parse(localStorage.getItem("notes")) || [];
   data.forEach((element) => {
@@ -94,7 +89,6 @@ const closeModal = () => {
 
 //Shows info in the modal
 const btnDtt = document.querySelectorAll(".btn-details");
-
 btnDtt.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     mdInner.innerHTML = `
@@ -104,7 +98,7 @@ btnDtt.forEach((btn) => {
   });
 });
 
-// //EDIT function
+// //EDIT note function
 const editNote = (e) => {
   btnSubmit.classList.add("hidden");
   btnSave.classList.remove("hidden");
@@ -113,7 +107,6 @@ const editNote = (e) => {
   input.value = e.parentElement.children[2].innerHTML;
   deleteNote(e);
 };
-
 const btnSave = document.querySelector(".btn-save");
 btnSave.addEventListener("click", function (b) {
   btnSubmit.classList.remove("hidden");
