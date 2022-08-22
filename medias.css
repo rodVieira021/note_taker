@@ -1,58 +1,210 @@
-@media (max-width: 320px) {
-  .app {
-    width: 95%;
-  }
-  .app h2 {
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-  }
-  .app h3 {
-    font-size: 15px;
-    font-weight: 400;
-    color: #1dd2af;
-    text-align: center;
-  }
-  #input {
-    width: 37%;
-  }
-  .note > div {
-    width: 38%;
+    @media (max-width: 799px) {
+    .app {
+      width: 300px;
+     
+    }
+    .app h2 {
+      font-size: 30px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .app h3 {
+      font-size: 15px;
+      font-weight: 400;
+      color: #1dd2af;
+      text-align: center;
+    }
+    #input {
+      width: 280px;
+    }
+    .note > div {
+      width: 300px;
+      height: 122px;
+    }
+  
+    .btn-submit {
+      align-self: flex-start;
+      font-size: 13px;
+      width: 80px;
+      height: 40px;
+    }
+  
+    .btn-save {
+      align-self: flex-start;
+    }
+  
+    .btn-details {
+      font-size: 10px;
+      width: 70px;
+      height: 30px;
+    }
+  
+    .xedit {
+      font-size: 10px;
+      width: 70px;
+      height: 30px;
+      left: 85px;
+      bottom: 3px;
+    }
+
+    .xclose {
+        font-size: 20px; 
+      }
+  
+    .note h3 {
+      font-size: 14px;
+    }
+    .note h4 {
+      font-size: 14px;
+    }
+    .note p {
+      font-size: 12px;
+    }
+  
+    .modal {
+    }
   }
 
-  .btn-submit {
-    align-self: flex-start;
-  }
 
-  .btn-save {
-    align-self: flex-start;
-  }
+@media(max-width: 582px){
+    .app {
+        width: 250px;
+       
+      }
+      .app h2 {
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .app h3 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #1dd2af;
+        text-align: center;
+      }
+      #input {
+        width: 230px;
+        height: 80px;
+      }
+      .note > div {
+        width: 250px;
+        height: 122px;
+      }
+    
+      .btn-submit {
+        align-self: flex-start;
+        font-size: 13px;
+        width: 80px;
+        height: 40px;
+      }
+    
+      .btn-save {
+        align-self: flex-start;
+      }
+    
+      .btn-details {
+        font-size: 10px;
+        width: 70px;
+        height: 30px;
+      }
+    
+      .xedit {
+        font-size: 10px;
+        width: 70px;
+        height: 30px;
+        left: 85px;
+        bottom: 3px;
+      }
 
-  .btn-details {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-  }
+      .xclose {
+        font-size: 20px; 
+      }
+    
+      .note h3 {
+        font-size: 14px;
+      }
+      .note h4 {
+        font-size: 14px;
+      }
+      .note p {
+        font-size: 12px;
+      }
+    
+      .modal {
+      }
+    
+}
 
-  .xedit {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-    left: 90px;
-  }
+@media(max-width: 320px){
+    .app {
+        min-width: 250px;
+       
+      }
+      .app h2 {
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .app h3 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #1dd2af;
+        text-align: center;
+      }
+      #input {
+        min-width: 230px;
+        min-height: 60px;
+        font-size: 10px;
+      }
 
-  .note h3 {
-    font-size: 14px;
-  }
-  .note h4 {
-    font-size: 14px;
-  }
-  .note p {
-    font-size: 12px;
-  }
+      #title{
+        font-size: 10px;
+      }
 
-  .modal {
-    width: 5vw;
-    height: 5vh;
-  }
+      .note > div {
+        min-width: 250px;
+        min-height: 122px;
+      }
+    
+      .btn-submit {
+        align-self: flex-start;
+        font-size: 13px;
+        width: 80px;
+        min-height: 40px;
+      }
+    
+      .btn-save {
+        align-self: flex-start;
+      }
+    
+      .btn-details {
+        font-size: 10px;
+        min-width: 70px;
+        min-height: 30px;
+      }
+    
+      .xedit {
+        font-size: 10px;
+        min-width: 70px;
+        min-height: 30px;
+        left: 85px;
+        bottom: 3px;
+      }
+
+      .xclose {
+        font-size: 20px; 
+      }
+    
+      .note h3 {
+        font-size: 14px;
+      }
+      .note h4 {
+        font-size: 14px;
+      }
+      .note p {
+        font-size: 12px;
+      }
+    
+      .modal {
+      }
 }
