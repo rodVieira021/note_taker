@@ -71,6 +71,11 @@
   .note p {
     font-size: 12px;
   }
+
+  .modal {
+    width: 55vw;
+    height: 40vh;
+  }
 }
 
 @media (max-width: 425px) {
@@ -145,6 +150,17 @@
   }
   .note p {
     font-size: 12px;
+  }
+
+  .modal {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  #xmodal {
+    font-size: 20px;
+    top:-20px;
+    right:-10px;
   }
 }
 
@@ -221,6 +237,17 @@
   .note p {
     font-size: 12px;
   }
+
+  .modal {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  #xmodal {
+    font-size: 20px;
+    top:-20px;
+    right:-10px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -235,16 +262,19 @@
     gap: 15px;
     width: 300px;
   }
+
   .app h2 {
     font-size: 50px;
     font-weight: 400;
     text-align: center;
   }
+
   .app h3 {
     font-size: 20px;
     font-weight: 400;
     text-align: center;
   }
+
   #input {
     width: 300px;
   }
@@ -285,6 +315,7 @@
 
   .xclose {
     font-size: 20px;
+  
   }
 
   .note h3 {
@@ -295,5 +326,24 @@
   }
   .note p {
     font-size: 12px;
+  }
+
+  .modal {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  #xmodal {
+    font-size: 20px;
+    top:-20px;
+    right:-10px;
+  }
+
+  h2.inner-title {
+    font-size: 20px;
+  }
+
+  h3.inner-data {
+    font-size: 18px;
   }
 }
