@@ -98,6 +98,8 @@ btnDtt.forEach((btn) => {
   });
 });
 
+const btnSave = document.querySelector(".btn-save");
+
 // //EDIT note function
 const editNote = (e) => {
   btnSubmit.classList.add("hidden");
@@ -105,11 +107,19 @@ const editNote = (e) => {
   title.value = e.parentElement.children[0].innerHTML;
   date.value = e.parentElement.children[1].innerHTML;
   input.value = e.parentElement.children[2].innerHTML;
-  deleteNote(e);
+  let toDelete = e.parentElement;
+
+  //targeting the SAVE button
+  btnSave.addEventListener("click", function (b) {
+    data = Array.from(JSON.parse(localStorage.getItem("notes")));
+    data = data.filter(function (item) {
+      let value = toDelete.children[0].innerHTML;
+      return item.title !== value;
+    });
+    localStorage.setItem("notes", JSON.stringify(data));
+    toDelete.remove();
+    btnSubmit.classList.remove("hidden");
+    btnSave.classList.add("hidden");
+    formValidation(b);
+  });
 };
-const btnSave = document.querySelector(".btn-save");
-btnSave.addEventListener("click", function (b) {
-  btnSubmit.classList.remove("hidden");
-  btnSave.classList.add("hidden");
-  formValidation(b);
-});
