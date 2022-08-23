@@ -1,156 +1,6 @@
-@media (max-width: 799px) {
+@media (max-width: 768px) {
   .app {
-    width: 730px;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 700px;
-  }
-  .app h2 {
-    font-size: 50px;
-    font-weight: 400;
-    text-align: center;
-  }
-  .app h3 {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-  }
-  #input {
-    width: 690px;
-  }
-
-  .note {
-    width: 730px;
-  }
-
-  .note > div {
-    width: 730px;
-    height: 122px;
-  }
-
-  .btn-submit {
-    align-self: flex-start;
-    font-size: 13px;
-    width: 80px;
-    height: 40px;
-  }
-
-  .btn-save {
-    align-self: flex-start;
-  }
-
-  .btn-details {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-  }
-
-  .xedit {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-    left: 85px;
-    bottom: 3px;
-  }
-
-  .xclose {
-    font-size: 20px;
-  }
-
-  .note h3 {
-    font-size: 14px;
-  }
-  .note h4 {
-    font-size: 14px;
-  }
-  .note p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 735px) {
-  .app {
-    width: 630px;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 600px;
-  }
-  .app h2 {
-    font-size: 50px;
-    font-weight: 400;
-    text-align: center;
-  }
-  .app h3 {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-  }
-  #input {
-    width: 600px;
-  }
-
-  .note {
-    width: 600px;
-  }
-
-  .note > div {
-    width: 630px;
-    height: 122px;
-  }
-
-  .btn-submit {
-    align-self: flex-start;
-    font-size: 13px;
-    width: 80px;
-    height: 40px;
-  }
-
-  .btn-save {
-    align-self: flex-start;
-  }
-
-  .btn-details {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-  }
-
-  .xedit {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-    left: 85px;
-    bottom: 3px;
-  }
-
-  .xclose {
-    font-size: 20px;
-  }
-
-  .note h3 {
-    font-size: 14px;
-  }
-  .note h4 {
-    font-size: 14px;
-  }
-  .note p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 635px) {
-  .app {
-    width: 550px;
+    width: 765px;
   }
 
   .form {
@@ -171,15 +21,15 @@
     text-align: center;
   }
   #input {
-    width: 520px;
+    width: 740px;
   }
 
   .note {
-    width: 500px;
+    width: 730px;
   }
 
   .note > div {
-    width: 550px;
+    width: 765px;
     height: 122px;
   }
 
@@ -223,84 +73,9 @@
   }
 }
 
-@media (max-width: 558px) {
+@media (max-width: 425px) {
   .app {
-    width: 480px;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 400px;
-  }
-  .app h2 {
-    font-size: 50px;
-    font-weight: 400;
-    text-align: center;
-  }
-  .app h3 {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-  }
-  #input {
-    width: 450px;
-  }
-
-  .note {
-    width: 400px;
-  }
-
-  .note > div {
-    width: 480px;
-    height: 122px;
-  }
-
-  .btn-submit {
-    align-self: flex-start;
-    font-size: 13px;
-    width: 80px;
-    height: 40px;
-  }
-
-  .btn-save {
-    align-self: flex-start;
-  }
-
-  .btn-details {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-  }
-
-  .xedit {
-    font-size: 10px;
-    width: 70px;
-    height: 30px;
-    left: 85px;
-    bottom: 3px;
-  }
-
-  .xclose {
-    font-size: 20px;
-  }
-
-  .note h3 {
-    font-size: 14px;
-  }
-  .note h4 {
-    font-size: 14px;
-  }
-  .note p {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .app {
-    width: 430px;
+    width: 420px;
   }
 
   .form {
@@ -329,7 +104,7 @@
   }
 
   .note > div {
-    width: 430px;
+    width: 420px;
     height: 122px;
   }
 
@@ -373,51 +148,44 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 375px) {
   .app {
-    width: 410px;
+    width: 370px;
   }
 
   .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    width: 200px;
+    gap: 15px;
+    width: 300px;
   }
   .app h2 {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 400;
     text-align: center;
   }
   .app h3 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     text-align: center;
   }
   #input {
-    width: 280px;
-    font-size: 12px;
-  }
-  #title {
-    font-size: 12px;
+    width: 350px;
   }
 
-  #date {
-    font-size: 12px;
-  }
   .note {
-    width: 200px;
+    width: 300px;
   }
 
   .note > div {
-    width: 410px;
+    width: 370px;
     height: 122px;
   }
 
   .btn-submit {
     align-self: flex-start;
-    font-size: 12px;
+    font-size: 13px;
     width: 80px;
     height: 40px;
   }
@@ -455,85 +223,77 @@
   }
 }
 
-/* @media (max-width:320px) {
-    .app {
-      width: 315px; 
-    }
+@media (max-width: 320px) {
+  .app {
+    width: 315px;
+  }
 
-    .form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        width: 100px;
-      }
-    .app h2 {
-      font-size: 30px;
-      font-weight: 400;
-      text-align: center;
-    }
-    .app h3 {
-      font-size: 15px;
-      font-weight: 400;
-      text-align: center;
-    }
-    #input {
-      width: 280px;
-      font-size: 12px;
-    }
-    #title{
-        font-size: 12px;
-    }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 300px;
+  }
+  .app h2 {
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .app h3 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+  }
+  #input {
+    width: 300px;
+  }
 
-    #date{
-        font-size: 12px;
-    }
-    .note {
-        width: 100px;
-      }
-      
-    .note > div {
-      width: 315px;
-      height: 122px;
-    }
-  
-    .btn-submit {
-      align-self: flex-start;
-      font-size: 12px;
-      width: 80px;
-      height: 40px;
-    }
-  
-    .btn-save {
-      align-self: flex-start;
-    }
-  
-    .btn-details {
-      font-size: 10px;
-      width: 70px;
-      height: 30px;
-    }
-  
-    .xedit {
-      font-size: 10px;
-      width: 70px;
-      height: 30px;
-      left: 85px;
-      bottom: 3px;
-    }
+  .note {
+    width: 300px;
+  }
 
-    .xclose {
-        font-size: 20px; 
-      }
-  
-    .note h3 {
-      font-size: 14px;
-    }
-    .note h4 {
-      font-size: 14px;
-    }
-    .note p {
-      font-size: 12px;
-    }
-  
-  } */
+  .note > div {
+    width: 315px;
+    height: 122px;
+  }
+
+  .btn-submit {
+    align-self: flex-start;
+    font-size: 13px;
+    width: 80px;
+    height: 40px;
+  }
+
+  .btn-save {
+    align-self: flex-start;
+  }
+
+  .btn-details {
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
+  }
+
+  .xedit {
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
+    left: 85px;
+    bottom: 3px;
+  }
+
+  .xclose {
+    font-size: 20px;
+  }
+
+  .note h3 {
+    font-size: 14px;
+  }
+  .note h4 {
+    font-size: 14px;
+  }
+  .note p {
+    font-size: 12px;
+  }
+}
