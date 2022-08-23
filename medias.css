@@ -135,7 +135,6 @@
     width: 70px;
     height: 30px;
     left: 85px;
-    bottom: 3px;
   }
 
   .xclose {
@@ -159,8 +158,8 @@
 
   #xmodal {
     font-size: 20px;
-    top:-20px;
-    right:-10px;
+    top: -20px;
+    right: -10px;
   }
 }
 
@@ -221,7 +220,6 @@
     width: 70px;
     height: 30px;
     left: 85px;
-    bottom: 3px;
   }
 
   .xclose {
@@ -245,8 +243,8 @@
 
   #xmodal {
     font-size: 20px;
-    top:-20px;
-    right:-10px;
+    top: -20px;
+    right: -10px;
   }
 }
 
@@ -310,12 +308,10 @@
     width: 70px;
     height: 30px;
     left: 85px;
-    bottom: 3px;
   }
 
   .xclose {
     font-size: 20px;
-  
   }
 
   .note h3 {
@@ -335,8 +331,8 @@
 
   #xmodal {
     font-size: 20px;
-    top:-20px;
-    right:-10px;
+    top: -20px;
+    right: -10px;
   }
 
   h2.inner-title {
