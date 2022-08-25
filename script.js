@@ -30,11 +30,12 @@ const createNote = () => {
     return (notes.innerHTML += `
           <div>
           <h3>${element.title}</h3>
-          <h4>Date:${element.date}</h4>
+          <h4>${element.date}</h4>
           <p>${element.text}</p>
           <button class="btn-details" onclick="openModal(this)">View Details</button> 
           <i class="fa-solid fa-circle-xmark xclose" onclick="deleteNote(this)" ></i>
           <button class="xedit" onclick="editNote(this)">Edit</button>
+          <button class="btn-save hidden" onclick="saveNote(this)">Save</button>
           </div>
           `);
   });
@@ -98,28 +99,53 @@ btnDtt.forEach((btn) => {
   });
 });
 
+
+const btnEdit = document.querySelector(".xedit");
 const btnSave = document.querySelector(".btn-save");
 
-// //EDIT note function
 const editNote = (e) => {
-  btnSubmit.classList.add("hidden");
+  btnEdit.classList.add("hidden");
   btnSave.classList.remove("hidden");
   title.value = e.parentElement.children[0].innerHTML;
   date.value = e.parentElement.children[1].innerHTML;
   input.value = e.parentElement.children[2].innerHTML;
-  let toDelete = e.parentElement;
+};
 
-  //targeting the SAVE button
-  btnSave.addEventListener("click", function (b) {
-    data = Array.from(JSON.parse(localStorage.getItem("notes")));
-    data = data.filter(function (item) {
-      let value = toDelete.children[0].innerHTML;
-      return item.title !== value;
+//Save and store saved notes
+const saveNote = (e) => {
+  data = Array.from(JSON.parse(localStorage.getItem("notes")));
+  btnEdit.classList.remove("hidden");
+  btnSave.classList.add("hidden");
+
+  if (title.value != e.parentElement.children[0].innerHTML) {
+    e.parentElement.children[0].innerHTML = title.value;
+
+    data.forEach((objOne) => {
+      objOne.title = e.parentElement.children[0].innerHTML;
     });
     localStorage.setItem("notes", JSON.stringify(data));
-    toDelete.remove();
-    btnSubmit.classList.remove("hidden");
-    btnSave.classList.add("hidden");
-    formValidation(b);
-  });
+  }
+
+  if (date.value != e.parentElement.children[1].innerHTML) {
+    e.parentElement.children[1].innerHTML = date.value;
+
+    data.forEach((objTwo) => {
+      objTwo.date = e.parentElement.children[1].innerHTML;
+    });
+
+    localStorage.setItem("notes", JSON.stringify(data));
+  }
+
+  if (input.value != e.parentElement.children[2].innerHTML) {
+    e.parentElement.children[2].innerHTML = input.value;
+
+    data.forEach((objThree) => {
+      objThree.text = e.parentElement.children[2].innerHTML;
+    });
+
+    localStorage.setItem("notes", JSON.stringify(data));
+  }
+  title.value = "";
+  date.value = "";
+  input.value = "";
 };
