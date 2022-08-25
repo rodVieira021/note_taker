@@ -99,13 +99,15 @@ btnDtt.forEach((btn) => {
   });
 });
 
-
 const btnEdit = document.querySelector(".xedit");
 const btnSave = document.querySelector(".btn-save");
+const noteColor = document.querySelector(".note > div");
 
 const editNote = (e) => {
   btnEdit.classList.add("hidden");
   btnSave.classList.remove("hidden");
+  noteColor.style.border = "1px solid red";
+
   title.value = e.parentElement.children[0].innerHTML;
   date.value = e.parentElement.children[1].innerHTML;
   input.value = e.parentElement.children[2].innerHTML;
@@ -114,8 +116,10 @@ const editNote = (e) => {
 //Save and store saved notes
 const saveNote = (e) => {
   data = Array.from(JSON.parse(localStorage.getItem("notes")));
+
   btnEdit.classList.remove("hidden");
   btnSave.classList.add("hidden");
+  noteColor.style.border = "1px solid gray";
 
   if (title.value != e.parentElement.children[0].innerHTML) {
     e.parentElement.children[0].innerHTML = title.value;
@@ -123,7 +127,6 @@ const saveNote = (e) => {
     data.forEach((objOne) => {
       objOne.title = e.parentElement.children[0].innerHTML;
     });
-    localStorage.setItem("notes", JSON.stringify(data));
   }
 
   if (date.value != e.parentElement.children[1].innerHTML) {
@@ -132,8 +135,6 @@ const saveNote = (e) => {
     data.forEach((objTwo) => {
       objTwo.date = e.parentElement.children[1].innerHTML;
     });
-
-    localStorage.setItem("notes", JSON.stringify(data));
   }
 
   if (input.value != e.parentElement.children[2].innerHTML) {
@@ -142,9 +143,9 @@ const saveNote = (e) => {
     data.forEach((objThree) => {
       objThree.text = e.parentElement.children[2].innerHTML;
     });
-
-    localStorage.setItem("notes", JSON.stringify(data));
   }
+  localStorage.setItem("notes", JSON.stringify(data));
+
   title.value = "";
   date.value = "";
   input.value = "";
