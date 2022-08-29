@@ -104,10 +104,11 @@ const btnSave = document.querySelector(".btn-save");
 const noteColor = document.querySelector(".note > div");
 
 const editNote = (e) => {
-  btnEdit.classList.add("hidden");
-  btnSave.classList.remove("hidden");
-  noteColor.style.border = "1px solid red";
+  const parentDiv = e.parentElement;
+  e.classList.add("hidden");
+  parentDiv.children[6].classList.remove("hidden"); //Is there a better way to target this button?
 
+  parentDiv.style.border = "1px solid red";
   title.value = e.parentElement.children[0].innerHTML;
   date.value = e.parentElement.children[1].innerHTML;
   input.value = e.parentElement.children[2].innerHTML;
@@ -116,10 +117,11 @@ const editNote = (e) => {
 //Save and store saved notes
 const saveNote = (e) => {
   data = Array.from(JSON.parse(localStorage.getItem("notes")));
-
+  const parentDiv = e.parentElement;
+  e.classList.add("hidden");
+  parentDiv.children[5].classList.remove("hidden");
   btnEdit.classList.remove("hidden");
-  btnSave.classList.add("hidden");
-  noteColor.style.border = "1px solid gray";
+  parentDiv.style.border = "1px solid gray";
 
   if (title.value != e.parentElement.children[0].innerHTML) {
     e.parentElement.children[0].innerHTML = title.value;
