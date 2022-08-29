@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
   .app {
-    width: 85%;
+    width: 95%;
   }
 
   .form {
@@ -25,7 +25,7 @@
   }
 
   .note {
-    width: 85%;
+    width: 95%;
   }
 
   .note > div {
@@ -42,6 +42,9 @@
 
   .btn-save {
     align-self: flex-start;
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
   }
 
   .btn-details {
@@ -80,7 +83,7 @@
 
 @media (max-width: 425px) {
   .app {
-    width: 85%;
+    width: 95%;
   }
 
   .form {
@@ -105,7 +108,7 @@
   }
 
   .note {
-    width: 85%;
+    width: 95%;
   }
 
   .note > div {
@@ -122,6 +125,9 @@
 
   .btn-save {
     align-self: flex-start;
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
   }
 
   .btn-details {
@@ -166,7 +172,7 @@
 
 @media (max-width: 375px) {
   .app {
-    width: 85%;
+    width: 95%;
   }
 
   .form {
@@ -191,7 +197,7 @@
   }
 
   .note {
-    width: 85%;
+    width: 95%;
   }
 
   .note > div {
@@ -208,6 +214,9 @@
 
   .btn-save {
     align-self: flex-start;
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
   }
 
   .btn-details {
@@ -252,7 +261,7 @@
 
 @media (max-width: 320px) {
   .app {
-    width: 85%;
+    width: 95%;
   }
 
   .form {
@@ -280,7 +289,7 @@
   }
 
   .note {
-    width: 85%;
+    width: 95%;
   }
 
   .note > div {
@@ -297,6 +306,9 @@
 
   .btn-save {
     align-self: flex-start;
+    font-size: 10px;
+    width: 70px;
+    height: 30px;
   }
 
   .btn-details {
