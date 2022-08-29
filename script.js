@@ -13,7 +13,8 @@ let data = [];
 // form validation
 const formValidation = () => {
   if (input.value === "") {
-    message.innerHTML = "Note cannot be blank!";
+    // message.innerHTML = "Note cannot be blank!";
+    alert("Note cannot be blank")
   } else {
     message.innerHTML = "";
     acceptData();
